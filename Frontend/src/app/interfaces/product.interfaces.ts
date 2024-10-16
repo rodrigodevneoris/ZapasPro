@@ -1,4 +1,4 @@
-export interface ProdcutInterface{
+export interface ProductInterface{
     id: number,
     nombre: string;
     stock: number;
