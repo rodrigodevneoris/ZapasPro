@@ -1,0 +1,15 @@
+# Ignorar la carpeta node_modules
+node_modules/
+
+# Ignorar archivos de configuración de entorno
+.env
+
+# Ignorar archivos de construcción de TypeScript
+dist/
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de configuración del sistema
+.DS_Store
+Thumbs.db

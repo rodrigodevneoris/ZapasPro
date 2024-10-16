@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // o la versión que estés utilizando
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist" // Asegúrate de que la salida sea la correcta
+  },
+  "include": [
+    "src/**/*.ts" // Asegúrate de que incluye tus archivos .ts
+  ]
+}
