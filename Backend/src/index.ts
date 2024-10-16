@@ -1,6 +1,8 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
+import bodyParser from 'body-parser';
 import { json } from 'body-parser';
+import authRoutes from './routes/auth.routes';
 import { getDb } from './db'; // Asegúrate de importar la función getDb
 
 const app = express();
@@ -9,6 +11,7 @@ const PORT = 3000;
 // Middleware
 app.use(cors());
 app.use(json()); // Para parsear JSON en las peticiones
+app.use(bodyParser.json());
 
 // Probar la conexión a la base de datos al inicio
 (async () => {
@@ -19,6 +22,8 @@ app.use(json()); // Para parsear JSON en las peticiones
         console.error("Error al establecer la conexión a la base de datos:", error.message); // Mensaje de error
     }
 })();
+// Rutas de autenticación
+app.use('/api/auth', authRoutes);
 
 // Obtener todos los productos
 app.get('/api/products', async (req: Request, res: Response, next: NextFunction) => {

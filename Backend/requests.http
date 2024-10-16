@@ -2,17 +2,17 @@ GET http://localhost:3000/api/products HTTP/1.1
 
 ###
 
-GET http://localhost:3000/api/products/2 HTTP/1.1
+GET http://localhost:3000/api/products/11 HTTP/1.1
 
 ###
 POST http://localhost:3000/api/products HTTP/1.1
 Content-Type: application/json
 
     {
-        "nombre": "Air Jordan 1 High OG",
+        "nombre": "OG",
         "stock": 25,
-        "precio": 170.00,
-        "imagen": "img/nike/Air_Jordan_1_High_OG.webp"
+        "precio": 170.50,
+        "imagen": "img/img1.png"
     }
 
 ### 
