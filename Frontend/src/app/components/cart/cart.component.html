@@ -1,0 +1,55 @@
+<div class="min-h-screen bg-gray-100">
+  <!-- Barra de navegación -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="/" class="text-white text-lg font-bold">ZapasPro</a>
+      <div class="flex items-center">
+        <a href="/" class="text-gray-300 hover:text-white px-3">Inicio</a>
+        <a href="/store" class="text-gray-300 hover:text-white px-3">Tienda</a>
+        <a href="/cart" class="text-gray-300 hover:text-white px-3">Carrito</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor del carrito -->
+  <div class="container mx-auto py-8">
+    <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Tu Carrito</h1>
+
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <table class="min-w-full border-collapse border border-gray-200">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="border border-gray-300 p-2 text-left">Producto</th>
+            <th class="border border-gray-300 p-2 text-left">Cantidad</th>
+            <th class="border border-gray-300 p-2 text-left">Precio</th>
+            <th class="border border-gray-300 p-2 text-left">Subtotal</th>
+            <th class="border border-gray-300 p-2 text-left">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td class="border border-gray-300 p-2 flex items-center">
+              <img [src]="item.imagen" alt="{{ item.nombre }}" class="w-16 h-16 object-cover rounded mr-4">
+              <span>{{ item.nombre }}</span>
+            </td>
+            <td class="border border-gray-300 p-2">{{ item.cantidad || 0 }}</td> <!-- Maneja undefined -->
+            <td class="border border-gray-300 p-2">{{ item.precio | currency }}</td>
+            <td class="border border-gray-300 p-2">{{ (item.precio * (item.cantidad || 0)) | currency }}</td> <!-- Maneja undefined -->
+            <td class="border border-gray-300 p-2">
+              <button (click)="removeFromCart(item)" class="text-red-600 hover:text-red-800">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="mt-4">
+        <h2 class="text-xl font-bold">Total: {{ total | currency }}</h2>
+      </div>
+
+      <div class="mt-4 flex justify-between">
+        <a href="/store" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Continuar Comprando</a>
+        <button (click)="checkout()" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Realizar Compra</button>
+      </div>
+    </div>
+  </div>
+</div>
