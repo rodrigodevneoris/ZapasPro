@@ -25,4 +25,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:3000/api/products/11 HTTP/1.1
+DELETE http://localhost:3000/api/products/2 HTTP/1.1
