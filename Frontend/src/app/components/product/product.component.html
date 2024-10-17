@@ -1,0 +1,33 @@
+<div style="padding: 50px;">
+    <h1>ZapasPro</h1>
+    <table class="table table-hover">
+        <thead class="table-danger">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">nombre</th>
+                <th scope="col">stock</th>
+                <th scope="col">precio</th>
+                <th scope="col">imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of producList; track $index) {
+                <tr>
+                    <th scope="row"> {{item.id}}</th>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.stock}}</td>
+                    <td>
+                        <span class="badge bg_successs">
+                            {{item.precio}}
+                        </span>
+                    </td>
+                    <td>
+                        <img width="50" height="60" src="{{item.imagen}}" alt="">
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
