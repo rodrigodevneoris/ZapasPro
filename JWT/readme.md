@@ -1,0 +1,1 @@
+node index para iniciar JWT
